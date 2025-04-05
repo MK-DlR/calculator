@@ -1,8 +1,10 @@
 4/5/25:
 
+- Replace temporary variables with temporary values in user input variables
+- Replace basic mathematical operator functions with switch statement within operate function
 - Create variables to store user inputs
 - Add commenting in css file
-- Create basic mathematical operators and temporary number variables for testing
+- Create basic mathematical operator functions and temporary number variables for testing
 
 4/4/25:
 
