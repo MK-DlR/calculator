@@ -13,17 +13,23 @@ const container = document.getElementById("container");
 container.classList.add("container");
 document.getElementById("container").style.width = "300px";
 document.getElementById("container").style.height = "390px";
+// display
+tempDisplay = "0";
+document.getElementById("display").textContent = tempDisplay;
 
 // display content
 const display = document.getElementById("display");
 display.classList.add("display");
-//display.textContent = "458745389";
 
 // operation variables
 // with temporary values for testing
 let userNum1 = 5;
 let userOperator = "+";
 let userNum2 = 3;
+// store content of the display (the number) in a variable
+let displayVariable = "";
+// result variable
+let resultVariable = "";
 
 // operate function
 function operate() {
@@ -59,120 +65,117 @@ function operate() {
 operate(userOperator);
 
 // button events
-// store content of the display (the number) in a variable
-let displayVariable = "";
-
 const btnClr = document.querySelector("#btnClr");
+
 btnClr.addEventListener("click", () => {
   displayVariable = "";
-  document.getElementById("display").textContent = displayVariable;
+  document.getElementById("display").textContent = tempDisplay;
 });
 
 const btnExp = document.querySelector("#btnExp");
 btnExp.addEventListener("click", () => {
-  displayVariable += " ^ ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "^";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btnMod = document.querySelector("#btnMod");
 btnMod.addEventListener("click", () => {
-  displayVariable += " % ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "%";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btnDiv = document.querySelector("#btnDiv");
 btnDiv.addEventListener("click", () => {
-  displayVariable += " ÷ ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "÷";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btn7 = document.querySelector("#btn7");
 btn7.addEventListener("click", () => {
-  displayVariable += "7";
+  displayVariable += 7;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn8 = document.querySelector("#btn8");
 btn8.addEventListener("click", () => {
-  displayVariable += "8";
+  displayVariable += 8;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn9 = document.querySelector("#btn9");
 btn9.addEventListener("click", () => {
-  displayVariable += "9";
+  displayVariable += 9;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnMult = document.querySelector("#btnMult");
 btnMult.addEventListener("click", () => {
-  displayVariable += " * ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "*";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btn4 = document.querySelector("#btn4");
 btn4.addEventListener("click", () => {
-  displayVariable += "4";
+  displayVariable += 4;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn5 = document.querySelector("#btn5");
 btn5.addEventListener("click", () => {
-  displayVariable += "5";
+  displayVariable += 5;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn6 = document.querySelector("#btn6");
 btn6.addEventListener("click", () => {
-  displayVariable += "6";
+  displayVariable += 6;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnSub = document.querySelector("#btnSub");
 btnSub.addEventListener("click", () => {
-  displayVariable += " - ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "-";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
-  displayVariable += "1";
+  displayVariable += 1;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
-  displayVariable += "2";
+  displayVariable += 2;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
-  displayVariable += "3";
+  displayVariable += 3;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnAdd = document.querySelector("#btnAdd");
 btnAdd.addEventListener("click", () => {
-  displayVariable += " + ";
-  document.getElementById("display").textContent = displayVariable;
+  userOperator = "+";
+  document.getElementById("display").textContent = userOperator;
 });
 
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
-  displayVariable += " . ";
+  displayVariable += ".";
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn0 = document.querySelector("#btn0");
 btn0.addEventListener("click", () => {
-  displayVariable += "0";
+  displayVariable += 0;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnBck = document.querySelector("#btnBck");
 btnBck.addEventListener("click", () => {
-  console.log("you clicked backspace");
   displayVariable =
     displayVariable.substring(0, displayVariable.length - 1) + "";
   document.getElementById("display").textContent = displayVariable;
@@ -180,6 +183,14 @@ btnBck.addEventListener("click", () => {
 
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
-  displayVariable += " = ";
-  document.getElementById("display").textContent = displayVariable;
+  // doesn't actually need to display, remove once functional
+  userOperator = "=";
+  document.getElementById("display").textContent = userOperator;
 });
+
+// figure out how to have pressing an operator
+// turn all pressed numbers so far
+// into a single variable
+// same with when enter is pressed
+// for second variable
+// pressing enter should replace display with result
