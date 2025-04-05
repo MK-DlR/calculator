@@ -5,15 +5,19 @@ const headerText = document.createElement("h2");
 headerText.classList.add("headerText");
 headerText.textContent = "Mathematical!";
 headerText.style.textAlign = "center";
+headerText.style.color = "#e98b55";
 header.appendChild(headerText);
 
 // creating and styling container element
 const container = document.getElementById("container");
 container.classList.add("container");
 document.getElementById("container").style.width = "300px";
-document.getElementById("container").style.height = "500px";
-container.style.border = "solid";
-container.style.borderWidth = "thin";
+document.getElementById("container").style.height = "390px";
+
+// display content
+const display = document.getElementById("display");
+display.classList.add("display");
+display.textContent = "458745389";
 
 // operation variables
 // with temporary values for testing
