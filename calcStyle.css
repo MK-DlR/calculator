@@ -1,21 +1,116 @@
 /* calcStyle.css */
 
-/* 
-https://www.w3schools.com/hTML/tryit.asp?filename=tryhtml_id_class
-# for id (only used for 1 element within the page)
-. for class (can be used by multiple elements to style them the same)
-*/
-
+/* content alignment */
 #content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   }
-  
+
+/* container alignment */
 #container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
   }
+
+/* display alignment and styling */
+#display {
+  height: 50px;
+  background-color:#2a3a56;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  font-size: 25px;
+  }
+
+/* BTN-GROUP */
+/* btn-group alignment and styling */
+.btn-group button {
+  background-color: #2a3a56; 
+  border: 1px solid rgb(0, 0, 0);
+  color: white; 
+  width: 50px;
+  padding: 20px 30px; 
+  cursor: pointer;
+  float: left;
+  border-bottom: none;
+}
+
+/* prevent double borders */
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+/* add button background color on hover */
+.btn-group button:hover {
+  background-color: #7eb9d5;
+}
+
+/* BTN-GROUP1 */
+/* btn-group1 alignment and styling */
+.btn-group1 button {
+  background-color: #7eb9d5; 
+  border: 1px solid rgb(0, 0, 0);
+  color: white; 
+  width: 50px;
+  padding: 20px 30px; 
+  cursor: pointer;
+  float: left;
+  border-bottom: none;
+}
+
+/* prevent double borders */
+.btn-group1 button:not(:last-child) {
+  border-right: none;
+}
+
+/* add button background color on hover */
+.btn-group1 button:hover {
+  background-color: #2a3a56;
+}
+
+/* BTN-GROUP SPECIAL */
+/* btn-group alignment and styling */
+.btn-group .special {
+  background-color: #7eb9d5; 
+}
+
+.btn-group .special:hover {
+  background-color: #2a3a56;
+}
+
+/* BTN-GROUP2 */
+/* btn-group2 alignment and styling */
+.btn-group2 button {
+  background-color: #2a3a56; 
+  border: 1px solid rgb(0, 0, 0);
+  color: white; 
+  width: 50px;
+  padding: 20px 30px; 
+  cursor: pointer;
+  float: left;
+}
+
+/* prevent double borders */
+.btn-group2 button:not(:last-child) {
+  border-right: none;
+}
+
+/* add button background color on hover */
+.btn-group2 button:hover {
+  background-color: #7eb9d5;
+}
+
+/* BTN-GROUP2 SPECIAL */
+/* btn-group2 alignment and styling */
+.btn-group2 .special {
+  background-color: #7eb9d5; 
+}
+
+.btn-group2 .special:hover {
+  background-color: #2a3a56;
+}
