@@ -45,13 +45,14 @@ Done
 6. make the calculator work
     a. by storing the first and second input numbers
     b. and then operate() on them (3)
-        b1. according to the selected operator (1 a - f / 3 a1)
+        b1. according to the selected operator
     c. when user presses =
     d. should already have code that can populate display
         d1. once operate has been called
         d2. update display with result of operation
     e. figure out how to store values
         e1. and call operate function with them
+wip
 
 POSSIBLE BUGS
 1. calculator should not evaluate more than a single pair of numbers at a time
@@ -60,16 +61,23 @@ POSSIBLE BUGS
         a2. display result (ie: 19) as first number in new calculation
         a3. along with second operator (ie: -)
         example: https://mrbuddh4.github.io/calculator/
+
 2. round answers with long decimals so display isn't overflown
+
 3. pressing = before entering all numbers and/or operator can cause problems
+
 4. "clear" should wipe out any existing data
+Done
+
 5. don't let divide by 0
     a. display snarky error message
+
 6. make sure operation only runs when supplied 2 numbers and an operator by the user
         a. not a number and 2 operators
         b. if consecutive operator buttons are pressed
             b1. should not run evaluations 
             b2. should only take last operator entered for next operation
+
 7. when result is displayed
     a. pressing new digit should clear result
     b. and start new calculation
@@ -83,7 +91,9 @@ EXTRA CREDIT:
         b2. and let users input decimals
         b3. limit to only one "1" (ie: no 12.3.56.5)
         b4. disable the "." if decimal separator is already present in display
+
 2. add a "backspace" button
     a. so user can undo last input
 Done
+
 3. add keyboard support
