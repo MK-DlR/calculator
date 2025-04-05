@@ -114,3 +114,13 @@
 .btn-group2 .special:hover {
   background-color: #2a3a56;
 }
+
+/* BTN-GROUP2 SPECIAL2 */
+/* btn-group2 alignment and styling */
+.btn-group2 .special2 {
+  background-color: #facc76;
+}
+
+.btn-group2 .special2:hover {
+  background-color: #e98b55;
+}
