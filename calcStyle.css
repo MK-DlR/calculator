@@ -1,9 +1,22 @@
 /* calcStyle.css */
 
-/* centering div that holds placeholder image */
-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
+/* 
+https://www.w3schools.com/hTML/tryit.asp?filename=tryhtml_id_class
+# for id (only used for 1 element within the page)
+. for class (can be used by multiple elements to style them the same)
+*/
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   }
