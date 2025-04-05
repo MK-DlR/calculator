@@ -5,6 +5,7 @@ PROJECT
     c. multiplication (*) and (x) (x - extra)
     d. division (/)
     e. modulo (%) (extra)
+    f. exponentiation (^) (extra)
 Done
 
 2. calculations will consist of
@@ -17,6 +18,7 @@ Done
 3. create "operate" function
     a. that takes an operator and 2 numbers
         a1. and calls the appropriate function (1 a - f) on the numbers
+Done
 
 4. create basic HTML calculator
     a. with buttons for each digit
