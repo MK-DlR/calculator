@@ -4,6 +4,11 @@
 let a = 8;
 let b = 2;
 
+// operation variables
+let userNum1;
+let userOperator;
+let userNum2;
+
 // math functions
 // addition
 function add(a, b) {
