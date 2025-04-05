@@ -1,5 +1,6 @@
 4/5/25:
 
+- Create html content div with header and container inside and add styling
 - Replace temporary variables with temporary values in user input variables
 - Replace basic mathematical operator functions with switch statement within operate function
 - Create variables to store user inputs
