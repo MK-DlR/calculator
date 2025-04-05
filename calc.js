@@ -17,7 +17,7 @@ document.getElementById("container").style.height = "390px";
 // display content
 const display = document.getElementById("display");
 display.classList.add("display");
-display.textContent = "458745389";
+//display.textContent = "458745389";
 
 // operation variables
 // with temporary values for testing
@@ -60,103 +60,126 @@ operate(userOperator);
 
 // button events
 // store content of the display (the number) in a variable
+let displayVariable = "";
 
 const btnClr = document.querySelector("#btnClr");
 btnClr.addEventListener("click", () => {
-  console.log("you clicked clear");
+  displayVariable = "";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnExp = document.querySelector("#btnExp");
 btnExp.addEventListener("click", () => {
-  console.log("you clicked exponentiation");
+  displayVariable += " ^ ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnMod = document.querySelector("#btnMod");
 btnMod.addEventListener("click", () => {
-  console.log("you clicked modulo");
+  displayVariable += " % ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnDiv = document.querySelector("#btnDiv");
 btnDiv.addEventListener("click", () => {
-  console.log("you clicked divide");
+  displayVariable += " ÷ ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn7 = document.querySelector("#btn7");
 btn7.addEventListener("click", () => {
-  console.log("you clicked the number 7");
+  displayVariable += "7";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn8 = document.querySelector("#btn8");
 btn8.addEventListener("click", () => {
-  console.log("you clicked the number 8");
+  displayVariable += "8";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn9 = document.querySelector("#btn9");
 btn9.addEventListener("click", () => {
-  console.log("you clicked the number 9");
+  displayVariable += "9";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnMult = document.querySelector("#btnMult");
 btnMult.addEventListener("click", () => {
-  console.log("you clicked multiply");
+  displayVariable += " * ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn4 = document.querySelector("#btn4");
 btn4.addEventListener("click", () => {
-  console.log("you clicked the number 4");
+  displayVariable += "4";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn5 = document.querySelector("#btn5");
 btn5.addEventListener("click", () => {
-  console.log("you clicked the number 5");
+  displayVariable += "5";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn6 = document.querySelector("#btn6");
 btn6.addEventListener("click", () => {
-  console.log("you clicked the number 6");
+  displayVariable += "6";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnSub = document.querySelector("#btnSub");
 btnSub.addEventListener("click", () => {
-  console.log("you clicked subtract");
+  displayVariable += " - ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
-  console.log("you clicked the number 1");
+  displayVariable += "1";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
-  console.log("you clicked the number 2");
+  displayVariable += "2";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
-  console.log("you clicked the number 3");
+  displayVariable += "3";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnAdd = document.querySelector("#btnAdd");
 btnAdd.addEventListener("click", () => {
-  console.log("you clicked add");
+  displayVariable += " + ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
-  console.log("you clicked decimal point");
+  displayVariable += " . ";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btn0 = document.querySelector("#btn0");
 btn0.addEventListener("click", () => {
-  console.log("you clicked the number 0");
+  displayVariable += "0";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnBck = document.querySelector("#btnBck");
 btnBck.addEventListener("click", () => {
   console.log("you clicked backspace");
+  displayVariable =
+    displayVariable.substring(0, displayVariable.length - 1) + "";
+  document.getElementById("display").textContent = displayVariable;
 });
 
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
-  console.log("you clicked equals");
+  displayVariable += " = ";
+  document.getElementById("display").textContent = displayVariable;
 });
