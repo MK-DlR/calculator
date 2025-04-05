@@ -1,48 +1,39 @@
 /* calc.js */
 
-// temporary number variables
-let a = 8;
-let b = 2;
-
 // operation variables
-let userNum1;
-let userOperator;
-let userNum2;
+// with temporary values for testing
+let userNum1 = 5;
+let userOperator = "+";
+let userNum2 = 3;
 
-// math functions
-// addition
-function add(a, b) {
-  console.log(a + b);
-  return a + b;
+// operate function
+function operate() {
+  let result;
+  switch (userOperator) {
+    case "+":
+      result = userNum1 + userNum2;
+      break;
+    case "-":
+      result = userNum1 - userNum2;
+      break;
+    case "*":
+    case "x":
+      result = userNum1 * userNum2;
+      break;
+    case "/":
+      result = userNum1 / userNum2;
+      break;
+    case "%":
+      result = userNum1 % userNum2;
+      break;
+    case "^":
+      result = userNum1 ** userNum2;
+      break;
+    default:
+      console.log("Error");
+  }
+  console.log(result);
+  return result;
 }
 
-// subtraction
-function subtract(a, b) {
-  console.log(a - b);
-  return a - b;
-}
-
-// multiplication
-function multiply(a, b) {
-  console.log(a * b);
-  return a * b;
-}
-
-// division
-function divide(a, b) {
-  console.log(a / b);
-  return a / b;
-}
-
-// modulo
-function modulo(a, b) {
-  console.log(a % b);
-  return a % b;
-}
-
-// calling functions to test
-add(a, b);
-subtract(a, b);
-multiply(a, b);
-divide(a, b);
-modulo(a, b);
+operate(userOperator);
