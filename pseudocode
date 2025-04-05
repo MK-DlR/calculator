@@ -2,10 +2,10 @@ PROJECT
 1. create functions for all of the basic math operators
     a. addition (+)
     b. subtraction (-)
-    c. multiplication (*) and (x) (extra)
+    c. multiplication (*) and (x) (x - extra)
     d. division (/)
     e. modulo (%) (extra)
-    f. exponent (^) (extra)
+Done
 
 2. calculations will consist of
     a. number, operator, number (ie 3 + 5)
