@@ -1,5 +1,8 @@
 4/5/25:
 
+- Add header color and display content
+- Add css styling to calculator
+- Create (non-functional) html calculator
 - Create html content div with header and container inside and add styling
 - Replace temporary variables with temporary values in user input variables
 - Replace basic mathematical operator functions with switch statement within operate function
