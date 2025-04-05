@@ -1,5 +1,6 @@
 /* calcStyle.css */
 
+/* centering div that holds placeholder image */
 div {
     display: flex;
     justify-content: center;
