@@ -40,6 +40,7 @@ Done
     a. when you click the digit buttons
     b. store content of the display (number/s) 
         b1. in a variable (for the next step)
+Done
 
 6. make the calculator work
     a. by storing the first and second input numbers
@@ -84,4 +85,5 @@ EXTRA CREDIT:
         b4. disable the "." if decimal separator is already present in display
 2. add a "backspace" button
     a. so user can undo last input
+Done
 3. add keyboard support
