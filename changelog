@@ -1,5 +1,9 @@
 4/5/25:
 
+- Remove spaces from around operators when clicked
+- Change string numbers to actual numbers
+- Make calculator start at 0 and clear reset to 0
+- Change enter button color and hover color
 - Create functional clear and backspace keys
 - Create functional displayVariable to show pressed numbers and/or symbols
 - Add button ids and event listeners for all numbers and symbols
