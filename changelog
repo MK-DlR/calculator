@@ -1,5 +1,6 @@
 4/5/25:
 
+- Add button ids and event listeners for all numbers and symbols
 - Add header color and display content
 - Add css styling to calculator
 - Create (non-functional) html calculator
