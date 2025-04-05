@@ -12,6 +12,7 @@ Done
     b. create 3 variables
         b1. one for each part of the operation
         b2. these variables will be used to update display
+Done
 
 3. create "operate" function
     a. that takes an operator and 2 numbers
