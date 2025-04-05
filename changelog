@@ -1,5 +1,7 @@
 4/5/25:
 
+- Create functional clear and backspace keys
+- Create functional displayVariable to show pressed numbers and/or symbols
 - Add button ids and event listeners for all numbers and symbols
 - Add header color and display content
 - Add css styling to calculator
