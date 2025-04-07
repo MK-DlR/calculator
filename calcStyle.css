@@ -115,6 +115,7 @@
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-top-left-radius: 1px;
+  border-left-width: medium;
 }
 
 #btnDiv {
@@ -122,6 +123,7 @@
   border-bottom-left-radius: 4px;
   border-top-right-radius: 1px;
   border-top-left-radius: 1px;
+  border-right-width: medium;
 }
 
 #btn7, #btn4, #btn1 {
@@ -129,6 +131,7 @@
   border-bottom-left-radius: 1px;
   border-top-right-radius: 4px;
   border-top-left-radius: 1px;
+  border-left-width: medium;
 }
 
 #btnMult, #btnSub, #btnAdd {
@@ -136,6 +139,7 @@
   border-bottom-left-radius: 4px;
   border-top-right-radius: 1px;
   border-top-left-radius: 4px;
+  border-right-width: medium;
 }
 
 #btnDec {
@@ -143,6 +147,8 @@
   border-bottom-left-radius: 4px;
   border-top-right-radius: 4px;
   border-top-left-radius: 1px;
+  border-left-width: medium;
+  border-bottom-width: medium;
 }
 
 #btn0, #btnBck {
@@ -150,6 +156,7 @@
   border-bottom-left-radius: 1px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
+  border-bottom-width: medium;
 }
 
 #btnEqu {
@@ -157,4 +164,6 @@
   border-bottom-left-radius: 1px;
   border-top-right-radius: 1px;
   border-top-left-radius: 4px;
+  border-right-width: medium;
+  border-bottom-width: medium;
 }
