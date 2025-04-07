@@ -11,8 +11,14 @@ header.appendChild(headerText);
 // creating and styling container element
 const container = document.getElementById("container");
 container.classList.add("container");
-document.getElementById("container").style.width = "300px";
-document.getElementById("container").style.height = "390px";
+document.getElementById("container").style.width = "275px";
+document.getElementById("container").style.height = "350px";
+document.getElementById("container").style.paddingTop = "15px";
+document.getElementById("container").style.paddingBottom = "10px";
+container.style.backgroundColor = "#2a3a56";
+container.style.border = "solid";
+container.style.borderWidth = "thin";
+document.getElementById("container").style.borderRadius = "4px";
 // display
 tempDisplay = "0";
 document.getElementById("display").textContent = tempDisplay;
@@ -20,6 +26,9 @@ document.getElementById("display").textContent = tempDisplay;
 // display content
 const display = document.getElementById("display");
 display.classList.add("display");
+display.style.border = "solid";
+display.style.borderWidth = "medium";
+display.style.borderColor = "black";
 
 // operation variables
 // with temporary values for testing
