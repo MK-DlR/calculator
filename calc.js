@@ -17,7 +17,7 @@ document.getElementById("container").style.paddingTop = "15px";
 document.getElementById("container").style.paddingBottom = "10px";
 container.style.backgroundColor = "#2a3a56";
 container.style.border = "solid";
-container.style.borderWidth = "thin";
+container.style.borderWidth = "medium";
 document.getElementById("container").style.borderRadius = "4px";
 // display
 tempDisplay = "0";
