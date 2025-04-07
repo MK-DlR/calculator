@@ -1,5 +1,7 @@
 4/7/25:
 
+- Change multiplication operator symbol in html
+- Add operate function within operator event listeners
 - Replace group button border styling with individual
 - Change borders to rounded corners
 - Remove missing border areas
