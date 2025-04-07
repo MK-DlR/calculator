@@ -1,3 +1,9 @@
+4/7/25:
+
+- Change borders to rounded corners
+- Remove missing border areas
+- Add margin and border around functional portion of calculator
+
 4/5/25:
 
 - Remove spaces from around operators when clicked
