@@ -1,5 +1,6 @@
 4/7/25:
 
+- Make outer borders of buttons and container thicker
 - Change multiplication operator symbol in html
 - Add operate function within operator event listeners
 - Replace group button border styling with individual
