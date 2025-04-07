@@ -1,5 +1,6 @@
 4/7/25:
 
+- Replace group button border styling with individual
 - Change borders to rounded corners
 - Remove missing border areas
 - Add margin and border around functional portion of calculator
