@@ -1,5 +1,10 @@
 4/7/25:
 
+- Create zeroCalculator function to fully zero out variables
+- Display shows error message if dividing by 0
+- Create storeFirstVariable and storeSecondVariable functions to store variables
+- Add array to store user input
+- Create clearDisplay function to clear display
 - Make outer borders of buttons and container thicker
 - Change multiplication operator symbol in html
 - Add operate function within operator event listeners
