@@ -33,12 +33,13 @@ display.style.borderColor = "black";
 // operation variables
 // with temporary values for testing
 let userNum1 = 5;
-let userOperator = "+";
 let userNum2 = 3;
-// store content of the display (the number) in a variable
-let displayVariable = "";
+// operator variable
+let userOperator;
 // result variable
 let resultVariable = "";
+// display variable
+let displayVariable = "";
 
 // operate function
 function operate() {
@@ -84,18 +85,21 @@ btnClr.addEventListener("click", () => {
 const btnExp = document.querySelector("#btnExp");
 btnExp.addEventListener("click", () => {
   userOperator = "^";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btnMod = document.querySelector("#btnMod");
 btnMod.addEventListener("click", () => {
   userOperator = "%";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btnDiv = document.querySelector("#btnDiv");
 btnDiv.addEventListener("click", () => {
-  userOperator = "÷";
+  userOperator = "/";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
@@ -120,6 +124,7 @@ btn9.addEventListener("click", () => {
 const btnMult = document.querySelector("#btnMult");
 btnMult.addEventListener("click", () => {
   userOperator = "*";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
@@ -144,6 +149,7 @@ btn6.addEventListener("click", () => {
 const btnSub = document.querySelector("#btnSub");
 btnSub.addEventListener("click", () => {
   userOperator = "-";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
@@ -168,6 +174,7 @@ btn3.addEventListener("click", () => {
 const btnAdd = document.querySelector("#btnAdd");
 btnAdd.addEventListener("click", () => {
   userOperator = "+";
+  operate();
   document.getElementById("display").textContent = userOperator;
 });
 
