@@ -37,12 +37,7 @@
   padding: 20px 30px; 
   cursor: pointer;
   float: left;
-  border-bottom: none;
-}
-
-/* prevent double borders */
-.btn-group button:not(:last-child) {
-  border-right: none;
+  border-radius: 4px;
 }
 
 /* add button background color on hover */
@@ -60,12 +55,9 @@
   padding: 20px 30px; 
   cursor: pointer;
   float: left;
-  border-bottom: none;
-}
-
-/* prevent double borders */
-.btn-group1 button:not(:last-child) {
-  border-right: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  
 }
 
 /* add button background color on hover */
@@ -93,11 +85,7 @@
   padding: 20px 30px; 
   cursor: pointer;
   float: left;
-}
-
-/* prevent double borders */
-.btn-group2 button:not(:last-child) {
-  border-right: none;
+  border-radius: 4px;
 }
 
 /* add button background color on hover */
