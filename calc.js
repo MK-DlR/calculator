@@ -32,12 +32,11 @@ display.style.borderColor = "black";
 
 // operation variables
 // with temporary values for testing
-let userNum1 = 5;
-let userNum2 = 3;
+let temp1 = [];
+let userNum1 = 0;
+let userNum2 = 0;
 // operator variable
 let userOperator;
-// result variable
-let resultVariable = "";
 // display variable
 let displayVariable = "";
 
@@ -56,7 +55,12 @@ function operate() {
       result = userNum1 * userNum2;
       break;
     case "/":
-      result = userNum1 / userNum2;
+      if (userNum2 === 0) {
+        result = "Cannot divide by zero!";
+        document.getElementById("display").textContent = result;
+      } else {
+        result = userNum1 / userNum2;
+      }
       break;
     case "%":
       result = userNum1 % userNum2;
@@ -67,126 +71,173 @@ function operate() {
     default:
       console.log("Error");
   }
-  console.log(result);
+  //console.log(result);
   return result;
 }
 
 // calling operate function
 operate(userOperator);
 
-// button events
-const btnClr = document.querySelector("#btnClr");
-
-btnClr.addEventListener("click", () => {
-  displayVariable = "";
+// clearing display function
+function clearDisplay() {
+  displayVariable = 0;
+  temp1 = [];
   document.getElementById("display").textContent = tempDisplay;
+}
+
+// zero out calculator
+function zeroCalculator() {
+  displayVariable = 0;
+  temp1 = [];
+  userNum1 = 0;
+  userNum2 = 0;
+}
+
+// store first variable function triggered by operators
+function storeFirstVariable() {
+  if (userNum1 === 0) {
+    userNum1 = temp1.toString();
+    userNum1 = Number(userNum1);
+    clearDisplay();
+  } else {
+    console.log("error");
+  }
+}
+
+// store second variable function triggered by enter
+function storeSecondVariable() {
+  if (userNum2 === 0) {
+    userNum2 = temp1.toString();
+    userNum2 = Number(userNum2);
+  } else {
+    console.log("error");
+  }
+}
+
+// button events
+// change clear event listener to call a clearing function - also used by operators
+const btnClr = document.querySelector("#btnClr");
+btnClr.addEventListener("click", () => {
+  zeroCalculator();
+  clearDisplay();
 });
 
 const btnExp = document.querySelector("#btnExp");
 btnExp.addEventListener("click", () => {
   userOperator = "^";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btnMod = document.querySelector("#btnMod");
 btnMod.addEventListener("click", () => {
   userOperator = "%";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btnDiv = document.querySelector("#btnDiv");
 btnDiv.addEventListener("click", () => {
   userOperator = "/";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btn7 = document.querySelector("#btn7");
 btn7.addEventListener("click", () => {
   displayVariable += 7;
+  temp1 += 7;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn8 = document.querySelector("#btn8");
 btn8.addEventListener("click", () => {
   displayVariable += 8;
+  temp1 += 8;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn9 = document.querySelector("#btn9");
 btn9.addEventListener("click", () => {
   displayVariable += 9;
+  temp1 += 9;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnMult = document.querySelector("#btnMult");
 btnMult.addEventListener("click", () => {
   userOperator = "*";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btn4 = document.querySelector("#btn4");
 btn4.addEventListener("click", () => {
   displayVariable += 4;
+  temp1 += 4;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn5 = document.querySelector("#btn5");
 btn5.addEventListener("click", () => {
   displayVariable += 5;
+  temp1 += 5;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn6 = document.querySelector("#btn6");
 btn6.addEventListener("click", () => {
   displayVariable += 6;
+  temp1 += 6;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnSub = document.querySelector("#btnSub");
 btnSub.addEventListener("click", () => {
   userOperator = "-";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
   displayVariable += 1;
+  temp1 += 1;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
   displayVariable += 2;
+  temp1 += 2;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
   displayVariable += 3;
+  temp1 += 3;
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btnAdd = document.querySelector("#btnAdd");
 btnAdd.addEventListener("click", () => {
   userOperator = "+";
-  operate();
+  storeFirstVariable();
   document.getElementById("display").textContent = userOperator;
 });
 
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
   displayVariable += ".";
+  temp1 += ".";
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn0 = document.querySelector("#btn0");
 btn0.addEventListener("click", () => {
   displayVariable += 0;
+  temp1 += 0;
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -199,14 +250,8 @@ btnBck.addEventListener("click", () => {
 
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
-  // doesn't actually need to display, remove once functional
-  userOperator = "=";
-  document.getElementById("display").textContent = userOperator;
+  storeSecondVariable();
+  const result = operate();
+  document.getElementById("display").textContent = result;
+  zeroCalculator();
 });
-
-// figure out how to have pressing an operator
-// turn all pressed numbers so far
-// into a single variable
-// same with when enter is pressed
-// for second variable
-// pressing enter should replace display with result
