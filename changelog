@@ -1,5 +1,6 @@
 4/8/25:
 
+- Add keyboard support
 - Consolidate event listeners
 - Add maxLength functionality to operation switch statement to keep result within specified length
 - Add limitLength to event listeners

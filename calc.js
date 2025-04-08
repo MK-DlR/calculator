@@ -228,3 +228,58 @@ document.getElementById("btnEqu").addEventListener("click", () => {
   decimalCount = 0;
   resetAfterEquals();
 });
+
+document.addEventListener("keydown", (e) => {
+  const key = e.key;
+
+  // numbers
+  if (!isNaN(key)) {
+    if (!limitLength()) return;
+    displayVariable += key;
+    temp1.push(key);
+    display.textContent = displayVariable;
+    return;
+  }
+
+  // decimal
+  if (key === "." && decimalCount === 0) {
+    if (!limitLength()) return;
+    displayVariable += ".";
+    temp1.push(".");
+    decimalCount++;
+    display.textContent = displayVariable;
+    return;
+  }
+
+  // operators
+  if (["+", "-", "*", "/", "%", "^"].includes(key)) {
+    handleOperator(key);
+    return;
+  }
+
+  // equals
+  if (key === "Enter" || key === "=") {
+    storeSecondVariable();
+    const result = operate();
+    display.textContent = result;
+    userNum1 = result;
+    decimalCount = 0;
+    resetAfterEquals();
+    return;
+  }
+
+  // clear
+  if (key.toLowerCase() === "c") {
+    zeroCalculator();
+    clearDisplay();
+    return;
+  }
+
+  // backspace
+  if (key === "Backspace") {
+    displayVariable = displayVariable.slice(0, -1);
+    temp1.pop();
+    display.textContent = displayVariable;
+    return;
+  }
+});
