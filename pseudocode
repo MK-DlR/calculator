@@ -97,6 +97,7 @@ EXTRA CREDIT:
         b2. and let users input decimals
         b3. limit to only one "1" (ie: no 12.3.56.5)
         b4. disable the "." if decimal separator is already present in display
+Done
 
 2. add a "backspace" button
     a. so user can undo last input
