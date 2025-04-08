@@ -252,8 +252,9 @@ document.addEventListener("keydown", (e) => {
   }
 
   // operators
-  if (["+", "-", "*", "/", "%", "^"].includes(key)) {
-    handleOperator(key);
+  if (["+", "-", "*", "/", "%", "^", "x"].includes(key)) {
+    const op = key === "x" ? "*" : key;
+    handleOperator(op);
     return;
   }
 
