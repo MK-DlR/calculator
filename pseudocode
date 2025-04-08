@@ -64,7 +64,7 @@ POSSIBLE BUGS
 Done
 
 2. round answers with long decimals so display isn't overfilled
-WIP - Max of 18 digits including decimals
+Done
 
 3. pressing = before entering all numbers and/or operator can cause problems
 Done
