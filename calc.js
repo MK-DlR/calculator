@@ -184,89 +184,18 @@ btnMod.addEventListener("click", () => handleOperator("%"));
 btnExp.addEventListener("click", () => handleOperator("^"));
 
 // numbers
-const btn1 = document.querySelector("#btn1");
-btn1.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 1;
-  temp1.push("1");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn2 = document.querySelector("#btn2");
-btn2.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 2;
-  temp1.push("2");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn3 = document.querySelector("#btn3");
-btn3.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 3;
-  temp1.push("3");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn4 = document.querySelector("#btn4");
-btn4.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 4;
-  temp1.push("4");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn5 = document.querySelector("#btn5");
-btn5.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 5;
-  temp1.push("5");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn6 = document.querySelector("#btn6");
-btn6.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 6;
-  temp1.push("6");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn7 = document.querySelector("#btn7");
-btn7.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 7;
-  temp1.push("7");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn8 = document.querySelector("#btn8");
-btn8.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 8;
-  temp1.push("8");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn9 = document.querySelector("#btn9");
-btn9.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 9;
-  temp1.push("9");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btn0 = document.querySelector("#btn0");
-btn0.addEventListener("click", () => {
-  if (!limitLength()) return;
-  displayVariable += 0;
-  temp1.push("0");
-  document.getElementById("display").textContent = displayVariable;
-});
+for (let i = 0; i <= 9; i++) {
+  const btn = document.getElementById(`btn${i}`);
+  btn.addEventListener("click", () => {
+    if (!limitLength()) return;
+    displayVariable += i;
+    temp1.push(i.toString());
+    display.textContent = displayVariable;
+  });
+}
 
 // decimal
-const btnDec = document.querySelector("#btnDec");
-btnDec.addEventListener("click", () => {
+document.getElementById("btnDec").addEventListener("click", () => {
   if (!limitLength()) return;
   if (decimalCount >= 1) {
     return;
@@ -278,23 +207,20 @@ btnDec.addEventListener("click", () => {
 });
 
 // clear
-const btnClr = document.querySelector("#btnClr");
-btnClr.addEventListener("click", () => {
+document.getElementById("btnClr").addEventListener("click", () => {
   zeroCalculator();
   clearDisplay();
 });
 
 // backspace
-const btnBck = document.querySelector("#btnBck");
-btnBck.addEventListener("click", () => {
+document.getElementById("btnBck").addEventListener("click", () => {
   displayVariable =
     displayVariable.substring(0, displayVariable.length - 1) + "";
   document.getElementById("display").textContent = displayVariable;
 });
 
 // equals
-const btnEqu = document.querySelector("#btnEqu");
-btnEqu.addEventListener("click", () => {
+document.getElementById("btnEqu").addEventListener("click", () => {
   storeSecondVariable();
   const result = operate();
   document.getElementById("display").textContent = result;

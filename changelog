@@ -1,5 +1,6 @@
 4/8/25:
 
+- Consolidate event listeners
 - Add maxLength functionality to operation switch statement to keep result within specified length
 - Add limitLength to event listeners
 - Use inputCount and maxLength to create limitLength function to limit amount of digits allowed in display from user input
