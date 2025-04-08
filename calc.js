@@ -42,6 +42,8 @@ let displayVariable = "";
 
 // operate function
 function operate() {
+  console.log(`Calculating: ${userNum1} ${userOperator} ${userNum2}`); // debug log
+  if (userOperator === undefined) return userNum1;
   let result;
   switch (userOperator) {
     case "+":
@@ -71,7 +73,7 @@ function operate() {
     default:
       console.log("Error");
   }
-  //console.log(result);
+  console.log(`Result: ${result}`); // debug log
   return result;
 }
 
@@ -93,6 +95,13 @@ function zeroCalculator() {
   userNum2 = 0;
 }
 
+// reset after pressing enter
+function resetAfterEquals() {
+  temp1 = [];
+  userNum2 = 0;
+  displayVariable = "";
+}
+
 // store first variable function triggered by operators
 function storeFirstVariable() {
   if (userNum1 === 0) {
@@ -106,70 +115,64 @@ function storeFirstVariable() {
 
 // store second variable function triggered by enter
 function storeSecondVariable() {
-  if (userNum2 === 0) {
+  if (temp1.length > 0) {
     userNum2 = Number(temp1.join(""));
     temp1 = [];
     displayVariable = "";
   } else {
-    console.log("error");
+    console.log("Error: No second number.");
   }
 }
 
+// handling operator function
+function handleOperator(op) {
+  if (userOperator && temp1.length > 0) {
+    userNum2 = Number(temp1.join(""));
+    const result = operate();
+    userNum1 = result;
+    userNum2 = 0;
+    temp1 = [];
+    displayVariable = result.toString();
+  } else if (temp1.length > 0) {
+    userNum1 = Number(temp1.join(""));
+    temp1 = [];
+    displayVariable = "";
+  }
+  userOperator = op;
+  document.getElementById("display").textContent = op;
+  temp1 = [];
+  displayVariable = "";
+}
+
 // button events
-// change clear event listener to call a clearing function - also used by operators
-const btnClr = document.querySelector("#btnClr");
-btnClr.addEventListener("click", () => {
-  zeroCalculator();
-  clearDisplay();
-});
+// operators
+btnAdd.addEventListener("click", () => handleOperator("+"));
+btnSub.addEventListener("click", () => handleOperator("-"));
+btnMult.addEventListener("click", () => handleOperator("*"));
+btnDiv.addEventListener("click", () => handleOperator("/"));
+btnMod.addEventListener("click", () => handleOperator("%"));
+btnExp.addEventListener("click", () => handleOperator("^"));
 
-const btnExp = document.querySelector("#btnExp");
-btnExp.addEventListener("click", () => {
-  userOperator = "^";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
-});
-
-const btnMod = document.querySelector("#btnMod");
-btnMod.addEventListener("click", () => {
-  userOperator = "%";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
-});
-
-const btnDiv = document.querySelector("#btnDiv");
-btnDiv.addEventListener("click", () => {
-  userOperator = "/";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
-});
-
-const btn7 = document.querySelector("#btn7");
-btn7.addEventListener("click", () => {
-  displayVariable += 7;
-  temp1.push("7");
+// numbers
+const btn1 = document.querySelector("#btn1");
+btn1.addEventListener("click", () => {
+  displayVariable += 1;
+  temp1.push("1");
   document.getElementById("display").textContent = displayVariable;
 });
 
-const btn8 = document.querySelector("#btn8");
-btn8.addEventListener("click", () => {
-  displayVariable += 8;
-  temp1.push("8");
+const btn2 = document.querySelector("#btn2");
+btn2.addEventListener("click", () => {
+  displayVariable += 2;
+  temp1.push("2");
   document.getElementById("display").textContent = displayVariable;
 });
 
-const btn9 = document.querySelector("#btn9");
-btn9.addEventListener("click", () => {
-  displayVariable += 9;
-  temp1.push("9");
+const btn3 = document.querySelector("#btn3");
+btn3.addEventListener("click", () => {
+  displayVariable += 3;
+  temp1.push("3");
   document.getElementById("display").textContent = displayVariable;
-});
-
-const btnMult = document.querySelector("#btnMult");
-btnMult.addEventListener("click", () => {
-  userOperator = "*";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
 });
 
 const btn4 = document.querySelector("#btn4");
@@ -193,45 +196,24 @@ btn6.addEventListener("click", () => {
   document.getElementById("display").textContent = displayVariable;
 });
 
-const btnSub = document.querySelector("#btnSub");
-btnSub.addEventListener("click", () => {
-  userOperator = "-";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
-});
-
-const btn1 = document.querySelector("#btn1");
-btn1.addEventListener("click", () => {
-  displayVariable += 1;
-  temp1.push("1");
+const btn7 = document.querySelector("#btn7");
+btn7.addEventListener("click", () => {
+  displayVariable += 7;
+  temp1.push("7");
   document.getElementById("display").textContent = displayVariable;
 });
 
-const btn2 = document.querySelector("#btn2");
-btn2.addEventListener("click", () => {
-  displayVariable += 2;
-  temp1.push("2");
+const btn8 = document.querySelector("#btn8");
+btn8.addEventListener("click", () => {
+  displayVariable += 8;
+  temp1.push("8");
   document.getElementById("display").textContent = displayVariable;
 });
 
-const btn3 = document.querySelector("#btn3");
-btn3.addEventListener("click", () => {
-  displayVariable += 3;
-  temp1.push("3");
-  document.getElementById("display").textContent = displayVariable;
-});
-
-const btnAdd = document.querySelector("#btnAdd");
-btnAdd.addEventListener("click", () => {
-  userOperator = "+";
-  storeFirstVariable();
-  document.getElementById("display").textContent = userOperator;
-});
-
-const btnDec = document.querySelector("#btnDec");
-btnDec.addEventListener("click", () => {
-  displayVariable += ".";
-  temp1.push(".");
+const btn9 = document.querySelector("#btn9");
+btn9.addEventListener("click", () => {
+  displayVariable += 9;
+  temp1.push("9");
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -242,6 +224,21 @@ btn0.addEventListener("click", () => {
   document.getElementById("display").textContent = displayVariable;
 });
 
+const btnDec = document.querySelector("#btnDec");
+btnDec.addEventListener("click", () => {
+  displayVariable += ".";
+  temp1.push(".");
+  document.getElementById("display").textContent = displayVariable;
+});
+
+// clear
+const btnClr = document.querySelector("#btnClr");
+btnClr.addEventListener("click", () => {
+  zeroCalculator();
+  clearDisplay();
+});
+
+// backspace
 const btnBck = document.querySelector("#btnBck");
 btnBck.addEventListener("click", () => {
   displayVariable =
@@ -249,10 +246,12 @@ btnBck.addEventListener("click", () => {
   document.getElementById("display").textContent = displayVariable;
 });
 
+// equals
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
   storeSecondVariable();
   const result = operate();
   document.getElementById("display").textContent = result;
-  zeroCalculator();
+  userNum1 = result;
+  resetAfterEquals();
 });
