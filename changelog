@@ -1,5 +1,6 @@
 4/8/25:
 
+- Add decimalCounter and if statement to only allow 1 decimal point per number
 - Update equals event listener
 - Update storeSecondVariable function
 - Create resetAfterEquals function
