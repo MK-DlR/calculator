@@ -1,7 +1,8 @@
 4/8/25:
 
-- Changed toString and Number conversion to use Number and join instead
-- Changed temp1 += digit to use push instead
+- Fix issue of digits summing together after clear being pressed
+- Change toString and Number conversion to use Number and join instead
+- Change temp1 += digit to use push instead
 - Remove enterPress function because it wasn't working correctly
 - Fix storeFirstVariable and storeSecondVariable functions since storeSecondVariable wasn't correctly displaying the input
 
