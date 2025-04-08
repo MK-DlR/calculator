@@ -1,5 +1,13 @@
+4/8/25:
+
+- Changed toString and Number conversion to use Number and join instead
+- Changed temp1 += digit to use push instead
+- Remove enterPress function because it wasn't working correctly
+- Fix storeFirstVariable and storeSecondVariable functions since storeSecondVariable wasn't correctly displaying the input
+
 4/7/25:
 
+- Create enterPress function
 - Create zeroCalculator function to fully zero out variables
 - Display shows error message if dividing by 0
 - Create storeFirstVariable and storeSecondVariable functions to store variables
