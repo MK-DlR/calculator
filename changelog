@@ -1,5 +1,11 @@
 4/8/25:
 
+- Update equals event listener
+- Update storeSecondVariable function
+- Create resetAfterEquals function
+- Reorganize buttons into numerical order
+- Create handleOperator function
+- Update operator event handlers
 - Fix issue of digits summing together after clear being pressed
 - Change toString and Number conversion to use Number and join instead
 - Change temp1 += digit to use push instead
