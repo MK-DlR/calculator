@@ -96,9 +96,9 @@ function zeroCalculator() {
 // store first variable function triggered by operators
 function storeFirstVariable() {
   if (userNum1 === 0) {
-    userNum1 = temp1.toString();
-    userNum1 = Number(userNum1);
-    clearDisplay();
+    userNum1 = Number(temp1.join(""));
+    temp1 = [];
+    displayVariable = "";
   } else {
     console.log("error");
   }
@@ -107,8 +107,9 @@ function storeFirstVariable() {
 // store second variable function triggered by enter
 function storeSecondVariable() {
   if (userNum2 === 0) {
-    userNum2 = temp1.toString();
-    userNum2 = Number(userNum2);
+    userNum2 = Number(temp1.join(""));
+    temp1 = [];
+    displayVariable = "";
   } else {
     console.log("error");
   }
@@ -146,21 +147,21 @@ btnDiv.addEventListener("click", () => {
 const btn7 = document.querySelector("#btn7");
 btn7.addEventListener("click", () => {
   displayVariable += 7;
-  temp1 += 7;
+  temp1.push("7");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn8 = document.querySelector("#btn8");
 btn8.addEventListener("click", () => {
   displayVariable += 8;
-  temp1 += 8;
+  temp1.push("8");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn9 = document.querySelector("#btn9");
 btn9.addEventListener("click", () => {
   displayVariable += 9;
-  temp1 += 9;
+  temp1.push("9");
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -174,21 +175,21 @@ btnMult.addEventListener("click", () => {
 const btn4 = document.querySelector("#btn4");
 btn4.addEventListener("click", () => {
   displayVariable += 4;
-  temp1 += 4;
+  temp1.push("4");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn5 = document.querySelector("#btn5");
 btn5.addEventListener("click", () => {
   displayVariable += 5;
-  temp1 += 5;
+  temp1.push("5");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn6 = document.querySelector("#btn6");
 btn6.addEventListener("click", () => {
   displayVariable += 6;
-  temp1 += 6;
+  temp1.push("6");
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -202,21 +203,21 @@ btnSub.addEventListener("click", () => {
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
   displayVariable += 1;
-  temp1 += 1;
+  temp1.push("1");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
   displayVariable += 2;
-  temp1 += 2;
+  temp1.push("2");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
   displayVariable += 3;
-  temp1 += 3;
+  temp1.push("3");
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -230,14 +231,14 @@ btnAdd.addEventListener("click", () => {
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
   displayVariable += ".";
-  temp1 += ".";
+  temp1.push(".");
   document.getElementById("display").textContent = displayVariable;
 });
 
 const btn0 = document.querySelector("#btn0");
 btn0.addEventListener("click", () => {
   displayVariable += 0;
-  temp1 += 0;
+  temp1.push("0");
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -250,6 +251,7 @@ btnBck.addEventListener("click", () => {
 
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
+  // doesn't actually need to display, remove once functional
   storeSecondVariable();
   const result = operate();
   document.getElementById("display").textContent = result;
