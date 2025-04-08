@@ -80,14 +80,14 @@ operate(userOperator);
 
 // clearing display function
 function clearDisplay() {
-  displayVariable = 0;
+  displayVariable = "";
   temp1 = [];
   document.getElementById("display").textContent = tempDisplay;
 }
 
 // zero out calculator
 function zeroCalculator() {
-  displayVariable = 0;
+  displayVariable = "";
   temp1 = [];
   userNum1 = 0;
   userNum2 = 0;
@@ -251,7 +251,6 @@ btnBck.addEventListener("click", () => {
 
 const btnEqu = document.querySelector("#btnEqu");
 btnEqu.addEventListener("click", () => {
-  // doesn't actually need to display, remove once functional
   storeSecondVariable();
   const result = operate();
   document.getElementById("display").textContent = result;
