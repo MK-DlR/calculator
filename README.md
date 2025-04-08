@@ -1,6 +1,6 @@
 # calculator
 
-live preview: https://milkteapuppy.github.io/calculator/ (wip)
+live preview: https://milkteapuppy.github.io/calculator/
 
 use css, html, and js to create a functioning calculator
 with working buttons and display
