@@ -39,6 +39,8 @@ let userNum2 = 0;
 let userOperator;
 // display variable
 let displayVariable = "";
+// decimal
+let decimalCount = 0;
 
 // operate function
 function operate() {
@@ -84,6 +86,7 @@ operate(userOperator);
 function clearDisplay() {
   displayVariable = "";
   temp1 = [];
+  decimalCount = 0;
   document.getElementById("display").textContent = tempDisplay;
 }
 
@@ -93,6 +96,7 @@ function zeroCalculator() {
   temp1 = [];
   userNum1 = 0;
   userNum2 = 0;
+  decimalCount = 0;
 }
 
 // reset after pressing enter
@@ -142,6 +146,7 @@ function handleOperator(op) {
   document.getElementById("display").textContent = op;
   temp1 = [];
   displayVariable = "";
+  decimalCount = 0;
 }
 
 // button events
@@ -224,10 +229,15 @@ btn0.addEventListener("click", () => {
   document.getElementById("display").textContent = displayVariable;
 });
 
+// decimal
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
+  if (decimalCount >= 1) {
+    return;
+  }
   displayVariable += ".";
   temp1.push(".");
+  decimalCount++;
   document.getElementById("display").textContent = displayVariable;
 });
 
@@ -253,5 +263,6 @@ btnEqu.addEventListener("click", () => {
   const result = operate();
   document.getElementById("display").textContent = result;
   userNum1 = result;
+  decimalCount = 0;
   resetAfterEquals();
 });
