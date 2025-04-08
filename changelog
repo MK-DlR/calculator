@@ -1,5 +1,9 @@
 4/8/25:
 
+- Add maxLength functionality to operation switch statement to keep result within specified length
+- Add limitLength to event listeners
+- Use inputCount and maxLength to create limitLength function to limit amount of digits allowed in display from user input
+- Add inputCount and maxLength
 - Add decimalCounter and if statement to only allow 1 decimal point per number
 - Update equals event listener
 - Update storeSecondVariable function

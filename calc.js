@@ -35,6 +35,9 @@ display.style.borderColor = "black";
 let temp1 = [];
 let userNum1 = 0;
 let userNum2 = 0;
+// max input and result length
+let inputCount = 0;
+let maxLength = 18;
 // operator variable
 let userOperator;
 // display variable
@@ -44,7 +47,7 @@ let decimalCount = 0;
 
 // operate function
 function operate() {
-  console.log(`Calculating: ${userNum1} ${userOperator} ${userNum2}`); // debug log
+  // console.log(`Calculating: ${userNum1} ${userOperator} ${userNum2}`); // debug log
   if (userOperator === undefined) return userNum1;
   let result;
   switch (userOperator) {
@@ -75,7 +78,18 @@ function operate() {
     default:
       console.log("Error");
   }
-  console.log(`Result: ${result}`); // debug log
+  // console.log(`Result: ${result}`); // debug log
+  if (typeof result === "number") {
+    let resultStr = result.toString();
+    if (resultStr.length > 17) {
+      if (Math.abs(result) < 1e16 && Math.abs(result) > 1e-6) {
+        result = result.toFixed(10);
+      } else {
+        result = result.toExponential(10);
+      }
+      result = result.toString().slice(0, 17);
+    }
+  }
   return result;
 }
 
@@ -104,6 +118,16 @@ function resetAfterEquals() {
   temp1 = [];
   userNum2 = 0;
   displayVariable = "";
+}
+
+// limit number length
+function limitLength() {
+  if (inputCount >= maxLength) {
+    console.log("Error: Too many digits");
+    return false;
+  }
+  inputCount++;
+  return true;
 }
 
 // store first variable function triggered by operators
@@ -147,6 +171,7 @@ function handleOperator(op) {
   temp1 = [];
   displayVariable = "";
   decimalCount = 0;
+  inputCount = 0;
 }
 
 // button events
@@ -161,6 +186,7 @@ btnExp.addEventListener("click", () => handleOperator("^"));
 // numbers
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 1;
   temp1.push("1");
   document.getElementById("display").textContent = displayVariable;
@@ -168,6 +194,7 @@ btn1.addEventListener("click", () => {
 
 const btn2 = document.querySelector("#btn2");
 btn2.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 2;
   temp1.push("2");
   document.getElementById("display").textContent = displayVariable;
@@ -175,6 +202,7 @@ btn2.addEventListener("click", () => {
 
 const btn3 = document.querySelector("#btn3");
 btn3.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 3;
   temp1.push("3");
   document.getElementById("display").textContent = displayVariable;
@@ -182,6 +210,7 @@ btn3.addEventListener("click", () => {
 
 const btn4 = document.querySelector("#btn4");
 btn4.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 4;
   temp1.push("4");
   document.getElementById("display").textContent = displayVariable;
@@ -189,6 +218,7 @@ btn4.addEventListener("click", () => {
 
 const btn5 = document.querySelector("#btn5");
 btn5.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 5;
   temp1.push("5");
   document.getElementById("display").textContent = displayVariable;
@@ -196,6 +226,7 @@ btn5.addEventListener("click", () => {
 
 const btn6 = document.querySelector("#btn6");
 btn6.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 6;
   temp1.push("6");
   document.getElementById("display").textContent = displayVariable;
@@ -203,6 +234,7 @@ btn6.addEventListener("click", () => {
 
 const btn7 = document.querySelector("#btn7");
 btn7.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 7;
   temp1.push("7");
   document.getElementById("display").textContent = displayVariable;
@@ -210,6 +242,7 @@ btn7.addEventListener("click", () => {
 
 const btn8 = document.querySelector("#btn8");
 btn8.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 8;
   temp1.push("8");
   document.getElementById("display").textContent = displayVariable;
@@ -217,6 +250,7 @@ btn8.addEventListener("click", () => {
 
 const btn9 = document.querySelector("#btn9");
 btn9.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 9;
   temp1.push("9");
   document.getElementById("display").textContent = displayVariable;
@@ -224,6 +258,7 @@ btn9.addEventListener("click", () => {
 
 const btn0 = document.querySelector("#btn0");
 btn0.addEventListener("click", () => {
+  if (!limitLength()) return;
   displayVariable += 0;
   temp1.push("0");
   document.getElementById("display").textContent = displayVariable;
@@ -232,6 +267,7 @@ btn0.addEventListener("click", () => {
 // decimal
 const btnDec = document.querySelector("#btnDec");
 btnDec.addEventListener("click", () => {
+  if (!limitLength()) return;
   if (decimalCount >= 1) {
     return;
   }
